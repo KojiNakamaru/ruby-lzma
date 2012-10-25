@@ -11,7 +11,11 @@ Gem::Specification.new do |s|
   s.authors = ["Ian Levesque"]
   s.date = %q{2010-06-07}
   s.email = %q{ian@ianlevesque.org}
-  s.extensions = ["ext/extconf.rb"]
+  if RUBY_PLATFORM =~ /java/
+    s.platform = "java"
+  else
+    s.extensions = ["ext/extconf.rb"]
+  end
   s.extra_rdoc_files = [
     "README.markdown"
   ]

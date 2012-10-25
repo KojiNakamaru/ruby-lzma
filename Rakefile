@@ -3,7 +3,7 @@ require 'rake/testtask'
 
 if RUBY_PLATFORM =~ /java/
   desc "compile .java to .class"
-  task :compile do
+  task :javac do
     chdir('java') do
       sh 'javac com/ephemeronindustries/lzma/*.java'
       sh 'javac SevenZip/Compression/LZ/*.java'
@@ -13,7 +13,7 @@ if RUBY_PLATFORM =~ /java/
   end
 
   desc "compile .classes to .jar"
-  task :jar => [:compile] do
+  task :compile => [:javac] do
     chdir('java') do
       sh "jar -cf lzma_java.jar com/ephemeronindustries/lzma/*.class SevenZip/Compression/LZ/*.class SevenZip/Compression/LZMA/*.class SevenZip/Compression/RangeCoder/*.class"
     end
