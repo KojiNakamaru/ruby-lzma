@@ -1,6 +1,6 @@
 #include "lzmalib.h"
 
-#include "MyWindows.h"
+#include "StdAfx.h"
 #include "MyInitGuid.h"
 #include "CommandLineParser.h"
 #include "StringConvert.h"
