@@ -1,5 +1,4 @@
 java/lzma_java.jar
-lib/lzma_java.jar
 *.class
 *.o
 *.bundle

@@ -13,12 +13,14 @@ if RUBY_PLATFORM =~ /java/
   end
 
   desc "compile .classes to .jar"
-  task :compile => [:javac] do
+  task :jar => [:javac] do
     chdir('java') do
       sh "jar -cf lzma_java.jar com/ephemeronindustries/lzma/*.class SevenZip/Compression/LZ/*.class SevenZip/Compression/LZMA/*.class SevenZip/Compression/RangeCoder/*.class"
     end
+    sh 'cp java/lzma_java.jar lib'
   end
 
+  task :compile => :jar
 else
   desc "compile C extension"
   task :compile do

@@ -115,6 +115,7 @@ Gem::Specification.new do |s|
      "java/SevenZip/LzmaBench.java",
      "java/com/ephemeronindustries/lzma/LZMA.java",
      "lib/lzma.rb",
+     "lib/lzma_java.jar",
      "ruby-lzma.gemspec",
      "test/test_lzma.rb"
   ]
