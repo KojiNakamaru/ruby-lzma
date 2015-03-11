@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-lzma}
-  s.version = "0.4.3.1"
+  s.version = "0.4.3.2"
   s.description = "ruby lzma extension."
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
