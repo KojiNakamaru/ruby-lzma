@@ -8,7 +8,7 @@
 
 #include "Vector.h"
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 #include "MyWindows.h"
 #endif
 
@@ -39,7 +39,7 @@ inline wchar_t* MyStringGetPrevCharPointer(const wchar_t *, wchar_t *p)
 inline const wchar_t* MyStringGetPrevCharPointer(const wchar_t *, const wchar_t *p)
   { return (p - 1); }
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 
 inline char* MyStringGetNextCharPointer(char *p)
   { return CharNextA(p); }
@@ -102,7 +102,7 @@ int MyStringCollateNoCase(const wchar_t *s1, const wchar_t *s2);
 int MyStringCompare(const char *s1, const char  *s2);
 int MyStringCompare(const wchar_t *s1, const wchar_t *s2);
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 int MyStringCompareNoCase(const char *s1, const char  *s2);
 #endif
 

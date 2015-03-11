@@ -3,7 +3,7 @@
 #ifndef __FILESTREAMS_H
 #define __FILESTREAMS_H
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 #include "FileIO.h"
 #else
 #include "C_FileIO.h"
@@ -18,7 +18,7 @@ class CInFileStream:
   public CMyUnknownImp
 {
 public:
-  #ifdef _WIN32
+  #if defined(_WIN32) && !defined(__MINGW32__)
   NWindows::NFile::NIO::CInFile File;
   #else
   NC::NFile::NIO::CInFile File;
@@ -27,7 +27,7 @@ public:
   virtual ~CInFileStream() {}
 
   bool Open(LPCTSTR fileName);
-  #ifdef _WIN32
+  #if defined(_WIN32) && !defined(__MINGW32__)
   #ifndef _UNICODE
   bool Open(LPCWSTR fileName);
   #endif
@@ -62,14 +62,14 @@ class COutFileStream:
   public CMyUnknownImp
 {
 public:
-  #ifdef _WIN32
+  #if defined(_WIN32) && !defined(__MINGW32__)
   NWindows::NFile::NIO::COutFile File;
   #else
   NC::NFile::NIO::COutFile File;
   #endif
   virtual ~COutFileStream() {}
   bool Create(LPCTSTR fileName, bool createAlways);
-  #ifdef _WIN32
+  #if defined(_WIN32) && !defined(__MINGW32__)
   #ifndef _UNICODE
   bool Create(LPCWSTR fileName, bool createAlways);
   #endif

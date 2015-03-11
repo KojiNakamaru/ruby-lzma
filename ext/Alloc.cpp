@@ -2,7 +2,7 @@
 
 #include "StdAfx.h"
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 #include "MyWindows.h"
 #else
 #include <stdlib.h>
@@ -39,7 +39,7 @@ void MyFree(void *address) throw()
   ::free(address);
 }
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 
 void *MidAlloc(size_t size) throw()
 {

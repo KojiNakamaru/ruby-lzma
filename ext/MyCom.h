@@ -50,7 +50,7 @@ public:
     _p = NULL;
     return pt;
   }
-  #ifdef _WIN32
+  #if defined(_WIN32) && !defined(__MINGW32__)
   HRESULT CoCreateInstance(REFCLSID rclsid, REFIID iid, LPUNKNOWN pUnkOuter = NULL, DWORD dwClsContext = CLSCTX_ALL)
   {
     return ::CoCreateInstance(rclsid, pUnkOuter, dwClsContext, iid, (void**)&_p);

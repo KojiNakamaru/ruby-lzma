@@ -3,7 +3,7 @@
 #ifndef __MYUNKNOWN_H
 #define __MYUNKNOWN_H
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 
 #ifdef _WIN32_WCE
 #if (_WIN32_WCE > 300)

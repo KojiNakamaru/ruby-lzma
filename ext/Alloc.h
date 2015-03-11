@@ -8,7 +8,7 @@
 void *MyAlloc(size_t size) throw();
 void MyFree(void *address) throw();
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(__MINGW32__)
 
 bool SetLargePageSize();
 
